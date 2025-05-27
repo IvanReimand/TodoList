@@ -2,24 +2,35 @@
 <html lang="et">
 <head>
   <meta charset="UTF-8">
-  <title>Task List</title>
+  <title>ToDo List</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    .task-container { border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
-    .task-row {
+    body { 
+      font-family: 'Times New Roman', Times, serif, sans-serif; 
+      padding: 20px; }
+    .todo-container { 
+      border: 3px solid #3600b4; 
+      padding: 10px; 
+      margin-top: 10px; 
+      background-color: rgb(215, 230, 250);
+      border-radius: 5px;
+    }
+    .todo-row {
       display: flex;
       align-items: center;
       margin-bottom: 5px;
+      background: rgb(255, 255, 255) ;
+      border-radius: 5px;
     }
-    .task-row input[type="text"] {
+    .todo-row input[type="text"] {
       flex: 1;
       margin: 0 10px;
-      padding: 5px;
+      padding: 8px;
+      
     }
-    .task-row button {
+    .todo-row button {
       background-color: transparent;
       border: none;
-      color: red;
+      color: rgb(255, 8, 0);
       cursor: pointer;
       font-size: 18px;
     }
@@ -27,36 +38,42 @@
 </head>
 <body>
 
-<h2>Task List</h2>
-<button onclick="addTask()">Add Task</button>
-<div id="taskList" class="task-container"></div>
+<h2>ToDo List</h2>
+<button onclick="Add_task()">Add task</button> 
+<div id="todoList" class="todo-container"></div>
 
 <script>
-  function addTask(taskText = '') {
-    const taskList = document.getElementById('taskList');
-
+  //Teen uue funktsiooni, võtab argumendiks teksti vaikimisi tühi rea:
+  function Add_task(todoText = '') { const todoList = document.getElementById('todoList'); //<- Leiab HTMLst elemendi, mille nimi on 'taskList'
+    
+    //Teeb uue div-elemendi, mis esindab ühte ülesande rida:
     const row = document.createElement('div');
-    row.className = 'task-row';
+    row.className = 'todo-row'; // Lisab divile klassi 'task-row'
 
+    //Teeb märkeruudu (checkbox), mille abil saab ülesande lõpetatuks märkida
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
 
+    //Teeb teksti välja, kus saab ülesande kirjeldust muuta
     const input = document.createElement('input');
     input.type = 'text';
-    input.value = taskText || 'New task';
+    input.value = todoText || 'New task'; //Kui todoText on tühi, siis on "New task"
 
+    //See teeb nupu 'Delete', kui vajutada selle nuppu siis see rida kustutakse:
     const deleteBtn = document.createElement('button');
-    deleteBtn.innerHTML = 'Delete';
-    deleteBtn.onclick = () => row.remove();
+    deleteBtn.innerHTML = 'Delete'; //<- Nupu tekst
+    deleteBtn.onclick = () => row.remove(); //Kui nuppu vajutatakse, eemaldatakse see rida DOM-ist
 
+    //Lisab checkboxi, sisestusvälja ja kustutamisnupu loodud ritta
     row.appendChild(checkbox);
     row.appendChild(input);
     row.appendChild(deleteBtn);
 
-    taskList.appendChild(row);
+    //Lisab loodud ülesande rea ülesannete nimekirja (taskList)
+    todoList.appendChild(row);
   }
 
-  // Alguses lisame mõned näidisülesanded
+  //Kutsutakse funktsioon välja ja lisatakse ülesanne tekstiga 'New task'
   addTask('New task');
   addTask('New task');
 </script>
