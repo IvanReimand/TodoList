@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- Подключение стилей Ant Design -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd@4.22.6/dist/antd.min.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+        <div style="width: 400px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <h1 style="text-align: center;">Register</h1>
+            <form id="registrationForm">
+                <div style="margin-bottom: 16px;">
+                    <label for="regUsername">Username</label>
+                    <input type="text" id="regUsername" name="username" placeholder="Enter your username" required style="width: 100%; padding: 8px; margin-top: 8px; border-radius: 4px; border: 1px solid #ddd;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label for="regFirstname">Firstname</label>
+                    <input type="text" id="regFirstname" name="firstname" placeholder="Enter your firstname" required style="width: 100%; padding: 8px; margin-top: 8px; border-radius: 4px; border: 1px solid #ddd;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label for="regLastname">Lastname</label>
+                    <input type="text" id="regLastname" name="lastname" placeholder="Enter your lastname" required style="width: 100%; padding: 8px; margin-top: 8px; border-radius: 4px; border: 1px solid #ddd;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" name="password" placeholder="Enter your password" required style="width: 100%; padding: 8px; margin-top: 8px; border-radius: 4px; border: 1px solid #ddd;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required style="width: 100%; padding: 8px; margin-top: 8px; border-radius: 4px; border: 1px solid #ddd;">
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" style="padding: 10px 20px; background-color: #1890ff; color: white; border: none; border-radius: 4px; cursor: pointer;">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
